@@ -41,7 +41,7 @@ public class Task1 {
 
     }
     // този експрешън не работи, пропускаше равнбедрената проверка и винаги връщаше че триъгълника е разностранен
-    //(angle_1 == angle_2 && angle_1 != angle_3) || (angle_2 == angle_3 && angle_2 != angle_1) || (angle_1 == angle_3 && angle_1 != angle_2)
+    //((angle_1 == angle_2 && angle_1 != angle_3) || (angle_2 == angle_3 && angle_2 != angle_1) || (angle_1 == angle_3 && angle_1 != angle_2))
 //
 //
 //
