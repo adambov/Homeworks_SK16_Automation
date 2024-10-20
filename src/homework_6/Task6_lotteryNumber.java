@@ -14,7 +14,6 @@ public class Task6_lotteryNumber {
             LotteryList.add(task);
         }
 
-
         if (input.equalsIgnoreCase("stop")) {
             System.out.println("This is keyword for stopping the program and you can use it only for this");
         }
@@ -22,29 +21,35 @@ public class Task6_lotteryNumber {
         while (!input.equalsIgnoreCase("stop")) {
 
             System.out.println("Enter action: ");
-            String action = scanner1.nextLine().toLowerCase();
+            input = scanner1.nextLine().toLowerCase();
 
 
-            if (!action.equals("add") && !action.equals("remove") && !action.equals("show") && !action.equals("stop")) {
+            if (!input.equals("add") && !input.equals("remove") && !input.equals("show") && !input.equals("stop")) {
                 System.out.println("Action not possible");
                 continue;
             }
-            switch (action) {
+            switch (input) {
                 case "add":
                     System.out.println("Enter number: ");
-                    action = scanner1.nextLine();
-                    String AddNum = action;
-                    LotteryList.add(AddNum);
+                    input = scanner1.nextLine();
+                    String AddNum = input;
+                    if (!LotteryList.contains(AddNum)){
+                        LotteryList.add(AddNum);
+                    } else {
+                        System.out.println("Congratulations you won the lottery");
+                    }
                     break;
                 case "remove":
                     System.out.println("Enter number: ");
-                    action = scanner1.nextLine();
-                    String RemovedNum = action;
+                    input = scanner1.nextLine();
+                    String RemovedNum = input;
                     LotteryList.remove(RemovedNum);
-
                     break;
                 case "show":
                     System.out.println(LotteryList);
+                    break;
+                case "stop":
+                    System.out.println("Game stopped" + " Winning numbers are: " + LotteryList);
                     break;
                 default:
                     System.out.println("Action not possible");
