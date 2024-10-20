@@ -15,8 +15,10 @@ public class Task5_ToDoList {
         for (String task : tasks) {
             Todo.add(task);
         }
-
-        while (input != "stop") {
+        if (input.equalsIgnoreCase("stop")){
+            System.out.println("This is keyword for stopping the program and you can use it only for this");
+        }
+        while (!input.equalsIgnoreCase("stop")) {
             System.out.println("add, remove or finish a task: ");
             String action = scanner1.nextLine().toLowerCase();
 
