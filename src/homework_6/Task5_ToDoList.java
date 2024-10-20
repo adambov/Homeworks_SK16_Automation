@@ -17,29 +17,35 @@ public class Task5_ToDoList {
             Todo.add(task);
         }
 
-        System.out.println("add, remove or finish a task: ");
-        String action = scanner1.nextLine();
+        while (input != "stop") {
+            System.out.println("add, remove or finish a task: ");
+            String action = scanner1.nextLine();
 
-        System.out.println("Enter a new task: ");
-
-            if (action.equals("add")) {
-
+            if (action.equalsIgnoreCase("add")) {
+                System.out.println("Enter the task");
                 String NewAction = scanner1.nextLine();
                 Todo.add(NewAction);
 
-            } else if (action.equals("remove")) {
-
+            } else if (action.equalsIgnoreCase("remove")) {
+                System.out.println("Enter the task");
                 String RemovedTask = scanner1.nextLine();
                 Todo.remove(RemovedTask);
 
-            } else if (action.equals("finish")) {
-
+            } else if (action.equalsIgnoreCase("finish")) {
+                System.out.println("Enter the task");
                 String CompletedTask = scanner1.nextLine();
                 isFinished = true;
                 Todo.set(Todo.indexOf(CompletedTask), "*" + CompletedTask + "*");
                 System.out.println(CompletedTask + " is finished.");
+            } else if (action.equalsIgnoreCase("stop")) {
+                System.out.println(Todo);
+                break;
             }
-        System.out.println(Todo);
-        }
 
+            System.out.println(Todo);
         }
+    }
+}
+
+
+
