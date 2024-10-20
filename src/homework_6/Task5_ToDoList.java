@@ -18,8 +18,12 @@ public class Task5_ToDoList {
 
         while (input != "stop") {
             System.out.println("add, remove or finish a task: ");
-            String action = scanner1.nextLine();
+            String action = scanner1.nextLine().toLowerCase();
 
+            if (!action.equals("add") && !action.equals("remove") && !action.equals("finish") && !action.equals("stop")){
+                System.out.println("Action not possible");
+                continue;
+            }
             if (action.equalsIgnoreCase("add")) {
                 System.out.println("Enter the task");
                 String NewAction = scanner1.nextLine().toLowerCase();
@@ -28,11 +32,21 @@ public class Task5_ToDoList {
             } else if (action.equalsIgnoreCase("remove")) {
                 System.out.println("Enter the task");
                 String RemovedTask = scanner1.nextLine().toLowerCase();
+
+                if (!Todo.contains(RemovedTask)) {
+                    System.out.println("Task \"" + RemovedTask + "\" does not exist.");
+                    continue;
+                }
                 Todo.remove(RemovedTask);
 
             } else if (action.equalsIgnoreCase("finish")) {
                 System.out.println("Enter the task");
                 String CompletedTask = scanner1.nextLine().toLowerCase();
+
+                    if (!Todo.contains(CompletedTask)){
+                        System.out.println("Task \"" + CompletedTask + "\" does not exist.");
+                        continue;
+                    }
                 Todo.set(Todo.indexOf(CompletedTask), "*" + CompletedTask + "*");
                 System.out.println(CompletedTask + " is finished.");
 
