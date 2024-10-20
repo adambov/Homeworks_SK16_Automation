@@ -2,6 +2,7 @@ package homework_6;
 
 import java.util.*;
 
+
 public class Task6_lotteryNumber {
     public static void main(String[] arg) {
         Scanner scanner1 = new Scanner(System.in);
@@ -9,6 +10,7 @@ public class Task6_lotteryNumber {
         String input = scanner1.nextLine().toLowerCase();
         String[] SplitedInput = input.split(" ");
         ArrayList<String> LotteryList = new ArrayList<>();
+        boolean isValid = true;
 
         for (String task : SplitedInput) {
             LotteryList.add(task);
@@ -16,6 +18,17 @@ public class Task6_lotteryNumber {
 
         if (input.equalsIgnoreCase("stop")) {
             System.out.println("This is keyword for stopping the program and you can use it only for this");
+        }
+
+        for (char c : input.toCharArray()) {
+            if (input.matches("[0-9]+")) {
+                isValid = false;
+
+            }
+        }
+
+        if (!isValid) {
+            System.out.println("Please enter digits only");
         }
 
         while (!input.equalsIgnoreCase("stop")) {
