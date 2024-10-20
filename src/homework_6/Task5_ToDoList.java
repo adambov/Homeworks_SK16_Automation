@@ -7,7 +7,7 @@ public class Task5_ToDoList {
     public static void main(String[] args) {
         Scanner scanner1 = new Scanner(System.in);
         System.out.println("Crate a Todo List: ");
-        String input = scanner1.nextLine();
+        String input = scanner1.nextLine().toLowerCase();
         String[] tasks = input.split(", ");
 
         ArrayList<String> Todo = new ArrayList<>();
