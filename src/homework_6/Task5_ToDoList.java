@@ -11,7 +11,6 @@ public class Task5_ToDoList {
         String[] tasks = input.split(", ");
 
         ArrayList<String> Todo = new ArrayList<>();
-        boolean isFinished = false;
 
         for (String task : tasks) {
             Todo.add(task);
@@ -34,9 +33,9 @@ public class Task5_ToDoList {
             } else if (action.equalsIgnoreCase("finish")) {
                 System.out.println("Enter the task");
                 String CompletedTask = scanner1.nextLine().toLowerCase();
-                isFinished = true;
                 Todo.set(Todo.indexOf(CompletedTask), "*" + CompletedTask + "*");
                 System.out.println(CompletedTask + " is finished.");
+
             } else if (action.equalsIgnoreCase("stop")) {
                 System.out.println(Todo);
                 break;
