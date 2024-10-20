@@ -23,17 +23,17 @@ public class Task5_ToDoList {
 
             if (action.equalsIgnoreCase("add")) {
                 System.out.println("Enter the task");
-                String NewAction = scanner1.nextLine();
+                String NewAction = scanner1.nextLine().toLowerCase();
                 Todo.add(NewAction);
 
             } else if (action.equalsIgnoreCase("remove")) {
                 System.out.println("Enter the task");
-                String RemovedTask = scanner1.nextLine();
+                String RemovedTask = scanner1.nextLine().toLowerCase();
                 Todo.remove(RemovedTask);
 
             } else if (action.equalsIgnoreCase("finish")) {
                 System.out.println("Enter the task");
-                String CompletedTask = scanner1.nextLine();
+                String CompletedTask = scanner1.nextLine().toLowerCase();
                 isFinished = true;
                 Todo.set(Todo.indexOf(CompletedTask), "*" + CompletedTask + "*");
                 System.out.println(CompletedTask + " is finished.");
